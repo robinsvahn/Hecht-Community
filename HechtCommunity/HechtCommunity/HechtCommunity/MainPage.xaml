@@ -4,11 +4,29 @@
              xmlns:local="clr-namespace:HechtCommunity"
              x:Class="HechtCommunity.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout BackgroundColor="#0e5139">
+
+        <Image
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Source="ic_launcher.png"
+            WidthRequest="250"
+            HeightRequest="250"
+            Margin="50, 0, 50, 50"/>
+
+        <Button 
+            x:Name="CoWorkingBtn"
+            Text="CoWorking"
+            FontSize="20"
+            FontAttributes="Bold"
+            TextColor="WhiteSmoke"
+            BackgroundColor="#682221"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Start"
+            Padding="0, 20"
+            Margin="20"
+            Clicked="CoWorkingBtn_OnClicked"/>
+
     </StackLayout>
 
 </ContentPage>

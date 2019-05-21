@@ -17,5 +17,10 @@ namespace HechtCommunity
         {
             InitializeComponent();
         }
+
+        private async void CoWorkingBtn_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CoWorkingPage());
+        }
     }
 }
