@@ -1,11 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HechtCommunity"
              x:Class="HechtCommunity.CoWorkingPage"
              Title="CoWorking">
   <!--Pages can be added as references or inline-->
     <ContentPage Title="Stube" BackgroundColor="#FFFAD8">
+
         <Grid Padding="20">
+            <Grid.BindingContext>
+                <local:CoworkingViewModel/>
+            </Grid.BindingContext>
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="2*"/>
@@ -25,36 +30,36 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
-                BackgroundColor="#0e5139"
-                Clicked="TableOneBtn_OnClicked"/>
+                BackgroundColor="{Binding TableOneColor}"
+                Command="{Binding TableOneBtnClicked}"/>
 
             <Button
                 x:Name="TableTwoBtn"
                 Grid.Row="2"
                 Grid.Column="0"
                 BackgroundColor="#0e5139"
-                Clicked="TableTwoBtn_OnClicked"/>
+                />
 
             <Button
                 x:Name="TableThreeBtn"
                 Grid.Row="2"
                 Grid.Column="2"
                 BackgroundColor="#0e5139"
-                Clicked="TableThreeBtn_OnClicked"/>
+                />
 
             <Button
                 x:Name="TableFourBtn"
                 Grid.Row="4"
                 Grid.Column="0"
                 BackgroundColor="#0e5139"
-                Clicked="TableFourBtn_OnClicked"/>
+                />
 
             <Button
                 x:Name="TableFiveBtn"
                 Grid.Row="4"
                 Grid.Column="2"
                 BackgroundColor="#0e5139"
-                Clicked="TableFiveBtn_OnClicked"/>
+                />
 
         </Grid>
 
