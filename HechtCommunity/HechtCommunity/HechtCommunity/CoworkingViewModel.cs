@@ -13,11 +13,11 @@ namespace HechtCommunity
 {
     public class CoworkingViewModel : INotifyPropertyChanged
     {
-        private readonly CoworkingServiceMock _coworkingService;
+        private readonly CoworkingService _coworkingService;
 
         public CoworkingViewModel()
         {
-            _coworkingService = new CoworkingServiceMock();
+            _coworkingService = new CoworkingService();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -27,15 +27,15 @@ namespace HechtCommunity
             get
             {
                 return new Command(async () => {
-                    if (await _coworkingService.IsTableOccupiedById(1))
-                    {
-                        await _coworkingService.UnbookTableById(1);
-                        TableOneColor = Color.FromHex("#0e5139");
-                    }
-                    else
+                    if (await _coworkingService.IsTableVacant(1))
                     {
                         await _coworkingService.BookTableById(1);
                         TableOneColor = Color.Crimson;
+                    }
+                    else
+                    {
+                        await _coworkingService.UnbookTableById(1);
+                        TableOneColor = Color.FromHex("#0e5139");
                     }
                 });
             }

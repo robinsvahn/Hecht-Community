@@ -22,21 +22,21 @@ namespace HechtCommunity.Services.Impl
                 {5, false}
             };
         }
-        public async Task<bool> IsTableOccupiedById(int tableId)
+        public async Task<bool> IsTableVacant(int tableId)
         {
             return _tables[tableId];
         }
 
-        public async Task<HttpResponseMessage> BookTableById(int tableId)
+        public async Task<string> BookTableById(int tableId)
         {
             _tables[tableId] = true;
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return new HttpResponseMessage(HttpStatusCode.OK).ToString();
         }
 
-        public async Task<HttpResponseMessage> UnbookTableById(int tableId)
+        public async Task<string> UnbookTableById(int tableId)
         {
             _tables[tableId] = false;
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return new HttpResponseMessage(HttpStatusCode.OK).ToString();
         }
     }
 }

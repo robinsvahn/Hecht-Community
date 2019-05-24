@@ -8,8 +8,8 @@ namespace HechtCommunity.Services
 {
     public interface ICoworkingService
     {
-        Task<bool> IsTableOccupiedById(int tableId);
-        Task<HttpResponseMessage> BookTableById(int tableId);
-        Task<HttpResponseMessage> UnbookTableById(int tableId);
+        Task<bool> IsTableVacant(int tableId);
+        Task<string> BookTableById(int tableId);
+        Task<string> UnbookTableById(int tableId);
     }
 }
